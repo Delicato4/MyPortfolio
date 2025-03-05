@@ -4,6 +4,11 @@ module.exports = {
     "./public/**/*.{html,js,css}",
     "./**/*.html"
   ],
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+  
 
   theme: {
     size: {
