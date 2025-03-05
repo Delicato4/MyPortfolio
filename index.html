@@ -18,17 +18,17 @@
 
     <nav class="flex items-center justify-center p-5 gap-10">
       <a
-        class="p-1 font-semibold text-slate-800 hover:bg-slate-200 rounded-md hover:scale-105 transition-all duration-300 hover:p-2"
+        class="p-1 font-semibold text-slate-800 hover:bg-slate-200 rounded-md hover:scale-105 transition-all duration-300"
         href="#"
         >Home</a
       >
       <a
-        class="p-1 font-semibold text-slate-800 hover:bg-slate-200 rounded-md hover:scale-105 transition-all duration-300 hover:p-2"
+        class="p-1 font-semibold text-slate-800 hover:bg-slate-200 rounded-md hover:scale-105 transition-all duration-300 "
         href="#"
         >About</a
       >
       <a
-        class="p-1 font-semibold text-slate-800 hover:bg-slate-200 rounded-md hover:scale-105 transition-all duration-300 hover:p-2"
+        class="p-1 font-semibold text-slate-800 hover:bg-slate-200 rounded-md hover:scale-105 transition-all duration-300 "
         href="#"
         >Contact</a
       >
@@ -51,10 +51,7 @@
             ><h1 class="text-xl rounded-3xl text-cyan-800 font-bold p-1">
               Hi,Im AMIN
             </h1>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam
-            magnam hic fugiat vel! Veritatis repellendus quam ab maiores
-            voluptates? Consectetur dolore illo libero modi! Maiores autem
-            quidem amet corrupti perspiciatis!</span
+            Motivated Front-End Developer Intern with hands-on experience in building responsive web applications using HTML, CSS, JavaScript, and React. Adept at translating UI/UX designs into functional code while ensuring accessibility and performance. Passionate about learning new technologies and collaborating with teams to create seamless user experiences. Seeking opportunities to expand technical skills and contribute to innovative projects.</span
           >
         </div>
       </div>
@@ -86,7 +83,7 @@
         <div class="text-center bg-slate-300 shadow-lg shadow-slate-600 w-32 text-black font-semibold p-4 rounded-2xl ">Farsi</div>
         <div class="text-center bg-slate-300 shadow-lg shadow-slate-600 w-32 text-black font-semibold p-4 rounded-2xl ">English</div>
         <div class="text-center bg-slate-300 shadow-lg shadow-slate-600 w-32 text-black font-semibold p-4 rounded-2xl ">French</div>
-        <div class="text-center bg-slate-300 shadow-lg shadow-slate-600 w-32 text-black font-semibold p-4 rounded-2xl ">Deautch</div>
+        <div class="text-center bg-slate-300 shadow-lg shadow-slate-600 w-32 text-black font-semibold p-4 rounded-2xl ">Deutsch</div>
       
      
         </div>  
@@ -113,10 +110,54 @@
           </h5>
           <a href="https://delicato4.github.io/store-webapp1/">
             <img src="images/store webapp.png" alt="" 
-                 class="blur-sm group-hover:blur-none transition-all duration-300 w-full h-full rounded-full max-w-96 max-h-96"/>
+                 class="blur-sm group-hover:blur-none transition-all duration-300 rounded-full max-w-96 max-h-96"/>
           </a>
         </div>
       </div>
     </div> 
+
+    <!-- Footer -->
+
+    <footer class="flex mt-10 pt-5 items-center justify-center p-5 bg-slate-400 gap-10">
+      <div class="flex flex-col  items-center justify-center gap-5">
+        <h1 class="text-2xl font-bold text-slate-800">Contact Me</h1>
+        <p class="text-slate-800">Email: <a href="mailto:amin.kazemi.k@gmail.com">aminsahrae4@gmail.com</a></p>
+        <p class="text-slate-800">Phone: <a href="tel:+989123456789">+989116992576</a></p>
+        <p class="text-slate-800">Address: <a href="https://www.google.com/maps/place/Tehran,+Tehran+Province,+Iran/@35.6892,51.389,12z/data=!3m1!4b1!4m6!3m5!1s0x3f8e0043647a2701:0x678a76742478e880!8m2!3d35.6892!4d51.389!16zL20vMDZ1Z20?hl=en">guilan, Iran</a></p>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-5 ">
+        <h1 class="text-2xl font-bold text-slate-800">Follow Me</h1>
+          <div class="flex items-center justify-center gap-2">
+          <a href="https://github.com/Delicato4">
+            <img src="images/github-brands.svg" alt="" class="w-10 h-10 rounded-full hover:scale-105 transition-all duration-300"/>
+          </a>
+          <a href="https://www.instagram.com/amin._sahrai/">
+            <img src="images/instagram-brands-solid.svg" alt="" class="w-10 h-10 rounded-full hover:scale-105 transition-all duration-300"/>
+          </a>
+          <a href="https://www.linkedin.com/in/delicato4/">
+            <img src="images/linkedin-brands.svg" alt="" class="w-10 h-10 rounded-full hover:scale-105 transition-all duration-300"/>
+          </a>
+        </div>
+      </div>
+      
+      
+    </footer>
+
+    <script>
+      document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
