@@ -2534,6 +2534,10 @@ video {
   padding-bottom: 2rem;
 }
 
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -3226,6 +3230,10 @@ video {
   forced-color-adjust: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -3278,10 +3286,6 @@ video {
   background-color: rgb(71 85 105 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:p-2:hover {
-  padding: 0.5rem;
-}
-
 .hover\:font-bold:hover {
   font-weight: 700;
 }
@@ -3325,6 +3329,14 @@ video {
 
   .sm\:w-48 {
     width: 12rem;
+  }
+
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sm\:flex-row {
@@ -3401,14 +3413,6 @@ video {
 
   .lg\:gap-14 {
     gap: 3.5rem;
-  }
-
-  .lg\:gap-2 {
-    gap: 0.5rem;
-  }
-
-  .lg\:gap-10 {
-    gap: 2.5rem;
   }
 
   .lg\:rounded-l-full {
