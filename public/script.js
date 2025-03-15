@@ -1,38 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-
-    // Toggle menu
+  
+    if (!menuBtn) {
+      console.error('menuBtn not found in DOM');
+      return;
+    }
+    if (!mobileMenu) {
+      console.error('mobileMenu not found in DOM');
+      return;
+    }
+  
+    console.log('Script loaded, attaching event listeners');
+  
+    // Toggle menu with detailed logging
     ['click', 'touchstart'].forEach(eventType => {
-        menuBtn.addEventListener(eventType, (e) => {
-            console.log(`${eventType} event triggered`); // Debug log
-            menuBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
+      menuBtn.addEventListener(eventType, (e) => {
+        console.log(`${eventType} event triggered on menuBtn`);
+        menuBtn.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      });
     });
-
+  
     // Close menu on link click
     document.querySelectorAll('#mobileMenu a').forEach(link => {
-        link.addEventListener('click', () => {
-            menuBtn.classList.remove('active');
-            mobileMenu.classList.remove('active');
-        });
+      link.addEventListener('click', () => {
+        console.log('Mobile menu link clicked');
+        menuBtn.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
     });
-
+  
     // Close menu on resize
     window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768) {
-            menuBtn.classList.remove('active');
-            mobileMenu.classList.remove('active');
-        }
+      if (window.innerWidth >= 768) {
+        menuBtn.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      }
     });
-});
-document.addEventListener('DOMContentLoaded', () => {
-    const menuBtn = document.getElementById('menuBtn');
-    if (menuBtn) {
-      console.log('Menu button found in DOM');
-    } else {
-      console.log('Menu button NOT found in DOM');
-    }
-    // Rest of your code...
   });
