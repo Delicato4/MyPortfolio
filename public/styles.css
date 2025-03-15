@@ -1,3 +1,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#menuBtn {
+  right: 10px;
+  position: absolute;
+}
+@media (min-width: 768px) {
+  #menuBtn {
+    display: none;
+  }
+}
+#navbar-container {
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+#logo {
+  @media (min-width: 768px) {
+    margin-right: auto;
+  }
+}
+#desktop-menu {
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-size: 1.2rem;
+    margin-right: 40px;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hamburger menu animation */
+#menuBtn.active span:first-child {
+  transform: translateY(11.4px) rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+#menuBtn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+#menuBtn.active span:last-child {
+  transform: translateY(-11.5px) rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+/* Mobile menu animation */
+#mobileMenu {
+  opacity: 0;
+  transform: translateY(-11px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#mobileMenu.active {
+  opacity: 1;
+  transform: translateY(0);
+}

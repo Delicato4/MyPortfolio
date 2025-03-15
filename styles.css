@@ -2,6 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+#menuBtn {
+  margin-left: auto;
+}
+
+/* Hamburger menu animation */
+#ham-menu.active span:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+#ham-menu.active span:last-child {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+/* Hamburger menu animation */
+#menuBtn.active span:first-child {
+  transform: translateY(6px) rotate(45deg);
+}
+
+#menuBtn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+#menuBtn.active span:last-child {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile menu animation */
+#mobileMenu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#mobileMenu.active {
+  opacity: 1;
+  transform: translateY(0);
 }

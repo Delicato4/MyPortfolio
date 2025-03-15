@@ -11,32 +11,50 @@
     />
     <title>Amin</title>
     <link href="public/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/styles.css">
   </head>
   <body class="bg-slate-200">
 
     <!-- Navbar -->
-
-    <nav class="flex items-center justify-center p-5 gap-10">
-      <a
-        class="p-1 font-semibold text-slate-800 hover:bg-slate-200 rounded-md hover:scale-105 transition-all duration-300"
-        href="#"
-        >Home</a
-      >
-      <a
-        class="p-1 font-semibold text-slate-800 hover:bg-slate-200 rounded-md hover:scale-105 transition-all duration-300 "
-        href="#"
-        >About</a
-      >
-      <a
-        class="p-1 font-semibold text-slate-800 hover:bg-slate-200 rounded-md hover:scale-105 transition-all duration-300 "
-        href="#"
-        >Contact</a
-      >
+    <nav class="fixed top-0 left-0 w-full bg-slate-800 p-4 z-50">
+      <div id="navbar-container" class="container mx-auto flex items-center justify-center gap-5">
+        <!-- Logo -->
+        <a href="#" id="logo" class="text-white text-xl font-bold ">Amin Sahrae</a>
+    
+        <!-- Desktop Menu -->
+        <div id="desktop-menu" class="hidden md:flex space-x-8 right-0">
+          <a href="#home" class="text-white hover:text-cyan-400 transition">Home</a>
+          <a href="#projects" class="text-white hover:text-cyan-400 transition">Projects</a>
+          <a href="#contact" class="text-white hover:text-cyan-400 transition">Contact</a>
+        </div>
+    
+        <!-- Hamburger Button (right-aligned on mobile) -->
+        <button id="menuBtn" class="absolute   text-white focus:outline-none ml-auto  ">
+          <div class="flex flex-col gap-2 ">
+            <span class="block w-8 h-1  bg-white rounded transition"></span>
+            <span class="block w-8 h-1 bg-white rounded transition"></span>
+            <span class="block w-8 h-1 bg-white rounded transition"></span>
+          </div>
+        </button>
+      </div>
+    
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden fixed top-16 right-0 left-0 bg-slate-800 md:hidden transition-all">
+        <div class="flex flex-col items-center space-y-2 p-4 gap-2">
+          <a href="#home" class="text-white hover:text-cyan-400 transition">Home</a>
+          <a href="#projects" class="text-white hover:text-cyan-400 transition">Projects</a>
+          <a href="#contact" class="text-white hover:text-cyan-400 transition">Contact</a>
+        </div>
+      </div>
     </nav>
+    
+    
+
+    <!-- Spacer for fixed navbar -->
+    <div class="h-16"></div>
 
     <!-- Header -->
-
-    <header
+    <header id="home"
       class="rounded-bl-3xl rounded-br-3xl flex justify-center items-center gap-5 bg-slate-400 p-5 sm:flex-row flex-col lg:gap-14 lg:rounded-l-full lg:rounded-r-full"
     >
       <img
@@ -88,7 +106,7 @@
      
         </div>  
     </div>
-    <div class="flex flex-col items-center justify-center mt-10 p-5 ">
+    <div id="projects" class="flex flex-col items-center justify-center mt-10 p-5 ">
       <h1 class="text-2xl font-bold text-slate-800 pb-8 ">My Projects</h1>
       <div class="flex flex-col items-center justify-center gap-5 lg:flex-row xl:flex-row 2xl:flex-row md:flex-row sm:flex-col">
       
@@ -123,14 +141,10 @@
           </a>
         </div>
       </div>
-
-
     </div> 
 
     <!-- Footer -->
-
-    <footer class="flex flex-col lg:flex-row md:flex-row sm:flex-col mt-10 pt-5 items-center justify-center p-5 bg-slate-400 gap-10">
-      
+    <footer id="contact" class="flex flex-col lg:flex-row md:flex-row sm:flex-col mt-10 pt-5 items-center justify-center p-5 bg-slate-400 gap-10">
       <div class="flex flex-col items-center justify-center gap-5 ">
         <h1 class="text-2xl font-bold text-slate-800">Follow Me</h1>
           <div class="flex items-center justify-center gap-2">
@@ -151,8 +165,7 @@
         <p class="text-slate-800">Phone: <a href="tel:+989123456789">+989116992576</a></p>
         <p class="text-slate-800">Address: <a href="https://www.google.com/maps/place/Tehran,+Tehran+Province,+Iran/@35.6892,51.389,12z/data=!3m1!4b1!4m6!3m5!1s0x3f8e0043647a2701:0x678a76742478e880!8m2!3d35.6892!4d51.389!16zL20vMDZ1Z20?hl=en">guilan, Iran</a></p>
       </div>
-      
-      
     </footer>
+    <script src="/public/script.js"></script>
   </body>
 </html>
