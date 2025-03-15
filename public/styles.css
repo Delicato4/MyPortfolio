@@ -19,6 +19,7 @@
 #logo {
   @media (min-width: 768px) {
     margin-right: auto;
+    margin-left: 20px;
   }
 }
 #desktop-menu {
@@ -62,4 +63,37 @@ html {
 #mobileMenu.active {
   opacity: 1;
   transform: translateY(0);
+}
+/* Replace existing hamburger and mobile menu CSS with: */
+
+/* Hamburger bars base state */
+#menuBtn span {
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Hamburger active state */
+#menuBtn.active span:first-child {
+  transform: translateY(11.4px) rotate(45deg);
+}
+
+#menuBtn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+#menuBtn.active span:last-child {
+  transform: translateY(-11.5px) rotate(-45deg);
+}
+
+/* Mobile menu transitions */
+#mobileMenu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+#mobileMenu.active {
+  max-height: 500px;
+  opacity: 1;
 }

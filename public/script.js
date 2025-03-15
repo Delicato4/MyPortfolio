@@ -2,32 +2,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
 
-    function toggleMenu() {
-        mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('active');
-        menuBtn.classList.toggle('active');
-    }
-
-    menuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleMenu();
+    // Toggle menu
+    ['click', 'touchstart'].forEach(eventType => {
+        menuBtn.addEventListener(eventType, (e) => {
+            e.preventDefault();
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('active');
+    // Close menu on link click
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => {
             menuBtn.classList.remove('active');
-        }
+            mobileMenu.classList.remove('active');
+        });
     });
 
-    // Close menu when resizing to desktop
+    // Close menu on resize
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('active');
             menuBtn.classList.remove('active');
+            mobileMenu.classList.remove('active');
         }
     });
 });
