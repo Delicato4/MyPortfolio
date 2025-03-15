@@ -16,6 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleMenu();
         });
     });
+    menuBtn.addEventListener('click', () => {
+        if (menuBtn.classList.contains('active')) {
+            menuBtn.classList.remove('active');
+        } else {
+            menuBtn.classList.add('active');
+        }
+    });
+    menuBtn.addEventListener('touchstart', () => {
+        menuBtn.classList.toggle('active');
+    });
+    menuBtn.addEventListener('touchstart', () => {
+        menuBtn.classList.toggle('active');
+    });
+    menuBtn.addEventListener('touchstart', () => {
+        menuBtn.classList.toggle('active');
+    });
+    
 
     // Fallback for touch devices   
     menuBtn.addEventListener('touchstart', (e) => {
