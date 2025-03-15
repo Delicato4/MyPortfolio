@@ -22,6 +22,17 @@
     margin-left: 20px;
   }
 }
+#menuIcon {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+#menuIcon {
+  scale: 1.4;
+}
+#menuIcon:active {
+  scale: 1.2;
+}
 
 #navbar-container {
   padding: 1rem;

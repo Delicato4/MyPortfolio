@@ -6,9 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle menu function
     function toggleMenu() {
         menuBtn.classList.toggle('active');
+      
         mobileMenu.classList.toggle('active');
     }
-
+ 
     // Close menu when clicking a link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
