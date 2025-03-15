@@ -197,3 +197,30 @@ html {
 #menuBtn.active span:last-child {
   transform: translateY(-11.5px) rotate(-45deg);
 }
+#mobileMenu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#mobileMenu.active {
+  max-height: 500px; /* Adjust based on content height */
+  opacity: 1;
+}
+
+#menuBtn {
+  background: rgba(255, 0, 0, 0.5);
+  z-index: 10000;
+  padding: 15px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+@media (max-width: 767px) {
+  #menuBtn {
+    display: block !important;
+  }
+}
