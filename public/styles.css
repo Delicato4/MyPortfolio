@@ -154,3 +154,18 @@ html {
   z-index: 10000; /* Higher than everything else */
   background: rgba(255, 0, 0, 0.5);
 }
+#menuBtn {
+  background: rgba(255, 0, 0, 0.5); /* Keep for debugging */
+  z-index: 10000; /* Super high to avoid overlap */
+  padding: 15px; /* Larger touch target */
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+@media (max-width: 767px) {
+  #menuBtn {
+    display: block !important;
+    z-index: 10000;
+  }
+}
