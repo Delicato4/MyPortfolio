@@ -74,7 +74,7 @@ html {
 
 /* Hamburger active state */
 #menuBtn.active span:first-child {
-  transform: translateY(11.4px) rotate(45deg);
+  transform: translateY(11.6px) rotate(45deg);
 }
 
 #menuBtn.active span:nth-child(2) {
@@ -82,7 +82,7 @@ html {
 }
 
 #menuBtn.active span:last-child {
-  transform: translateY(-11.5px) rotate(-45deg);
+  transform: translateY(-11.6px) rotate(-45deg);
 }
 
 /* Mobile menu transitions */
@@ -102,125 +102,4 @@ html {
   position: absolute;
   padding: 10px; /* Increase touch target size */
   z-index: 1000; /* Ensure it’s above other elements */
-}
-
-#menuBtn span {
-  transition: all 0.3s ease;
-  transform-origin: center;
-  width: 32px; /* Slightly larger bars */
-  height: 3px; /* Thicker bars for visibility */
-}
-
-/* Hamburger active state */
-
-/* Ensure mobile menu is visible and not overlapped */
-#mobileMenu {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  z-index: 999; /* Ensure it’s high enough */
-}
-
-#mobileMenu.active {
-  max-height: 500px;
-  opacity: 1;
-}
-
-@media (min-width: 768px) {
-  #menuBtn {
-    display: none;
-  }
-}
-#menuBtn {
-  background: rgba(255, 0, 0, 0.5); /* Red overlay to see the clickable area */
-}
-@media (min-width: 768px) {
-  #menuBtn {
-    display: none;
-  }
-}
-@media (max-width: 767px) {
-  #menuBtn {
-    display: block !important; /* Force it to show */
-    background: rgba(255, 0, 0, 0.5); /* Keep the red background */
-    z-index: 10000; /* Really high to avoid overlap */
-    position: absolute;
-    right: 10px;
-    top: 10px; /* Ensure it’s not off-screen */
-  }
-}
-#menuBtn {
-  z-index: 10000; /* Higher than everything else */
-  background: rgba(255, 0, 0, 0.5);
-}
-#menuBtn {
-  background: rgba(255, 0, 0, 0.5); /* Keep for debugging */
-  z-index: 10000; /* Super high to avoid overlap */
-  padding: 15px; /* Larger touch target */
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-
-@media (max-width: 767px) {
-  #menuBtn {
-    display: block !important;
-    z-index: 10000;
-  }
-}
-#mobileMenu {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  z-index: 999;
-}
-
-#mobileMenu.active {
-  max-height: 500px; /* Ensure this is enough to show the menu */
-  opacity: 1;
-}
-
-#menuBtn span {
-  transition: all 0.3s ease;
-}
-
-#menuBtn.active span:first-child {
-  transform: translateY(11.4px) rotate(45deg);
-}
-
-#menuBtn.active span:nth-child(2) {
-  opacity: 0;
-}
-
-#menuBtn.active span:last-child {
-  transform: translateY(-11.5px) rotate(-45deg);
-}
-#mobileMenu {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  z-index: 999;
-}
-
-#mobileMenu.active {
-  max-height: 500px; /* Adjust based on content height */
-  opacity: 1;
-}
-
-#menuBtn {
-  background: rgba(255, 0, 0, 0.5);
-  z-index: 10000;
-  padding: 15px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-
-@media (max-width: 767px) {
-  #menuBtn {
-    display: block !important;
-  }
 }
