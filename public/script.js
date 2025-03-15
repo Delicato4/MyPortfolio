@@ -10,18 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Script loaded, elements found:', { menuBtn, mobileMenu });
 
     menuBtn.addEventListener('click', (e) => {
-        console.log('Click event triggered', { event: e.type, target: e.target });
-        const wasActive = menuBtn.classList.toggle('active');
-        const menuActive = mobileMenu.classList.toggle('active');
-        console.log('Toggled classes:', { menuBtnClasses: menuBtn.classList, mobileMenuClasses: mobileMenu.classList, wasActive, menuActive });
+        console.log('Click event triggered', { event: e.type });
+        menuBtn.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
     });
 
-    // Optional: Close menu on link click
-    document.querySelectorAll('#mobileMenu a').forEach(link => {
-        link.addEventListener('click', () => {
-            console.log('Link clicked, closing menu');
-            menuBtn.classList.remove('active');
-            mobileMenu.classList.remove('active');
-        });
-    });
+    // Fallback for touch devices
+    menuBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault(); // Prevent default touch behavior
+        console.log('Touchstart event triggered', { event: e.type });
+        menuBtn.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    }, { passive: false });
 });
