@@ -27,3 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menuBtn');
+    if (menuBtn) {
+      console.log('Menu button found in DOM');
+    } else {
+      console.log('Menu button NOT found in DOM');
+    }
+    // Rest of your code...
+  });

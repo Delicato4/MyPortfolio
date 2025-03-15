@@ -135,3 +135,22 @@ html {
 #menuBtn {
   background: rgba(255, 0, 0, 0.5); /* Red overlay to see the clickable area */
 }
+@media (min-width: 768px) {
+  #menuBtn {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  #menuBtn {
+    display: block !important; /* Force it to show */
+    background: rgba(255, 0, 0, 0.5); /* Keep the red background */
+    z-index: 10000; /* Really high to avoid overlap */
+    position: absolute;
+    right: 10px;
+    top: 10px; /* Ensure it’s not off-screen */
+  }
+}
+#menuBtn {
+  z-index: 10000; /* Higher than everything else */
+  background: rgba(255, 0, 0, 0.5);
+}
