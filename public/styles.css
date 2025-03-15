@@ -22,6 +22,10 @@
     margin-left: 20px;
   }
 }
+
+#navbar-container {
+  padding: 1rem;
+}
 #desktop-menu {
   @media (min-width: 768px) {
     display: flex;
@@ -36,6 +40,13 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+#menuBtn {
+  padding: 1rem;
+  right: 10px;
+  position: absolute;
+  padding: 10px; /* Increase touch target size */
+  z-index: 1000; /* Ensure it’s above other elements */
 }
 
 /* Hamburger menu animation */
@@ -58,6 +69,10 @@ html {
   opacity: 0;
   transform: translateY(-11px);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 #mobileMenu.active {
@@ -86,20 +101,8 @@ html {
 }
 
 /* Mobile menu transitions */
-#mobileMenu {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
 
 #mobileMenu.active {
   max-height: 500px;
   opacity: 1;
-}
-#menuBtn {
-  right: 10px;
-  position: absolute;
-  padding: 10px; /* Increase touch target size */
-  z-index: 1000; /* Ensure it’s above other elements */
 }
