@@ -97,3 +97,41 @@ html {
   max-height: 500px;
   opacity: 1;
 }
+#menuBtn {
+  right: 10px;
+  position: absolute;
+  padding: 10px; /* Increase touch target size */
+  z-index: 1000; /* Ensure it’s above other elements */
+}
+
+#menuBtn span {
+  transition: all 0.3s ease;
+  transform-origin: center;
+  width: 32px; /* Slightly larger bars */
+  height: 3px; /* Thicker bars for visibility */
+}
+
+/* Hamburger active state */
+
+/* Ensure mobile menu is visible and not overlapped */
+#mobileMenu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 999; /* Ensure it’s high enough */
+}
+
+#mobileMenu.active {
+  max-height: 500px;
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  #menuBtn {
+    display: none;
+  }
+}
+#menuBtn {
+  background: rgba(255, 0, 0, 0.5); /* Red overlay to see the clickable area */
+}

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle menu
     ['click', 'touchstart'].forEach(eventType => {
         menuBtn.addEventListener(eventType, (e) => {
-            e.preventDefault();
+            console.log(`${eventType} event triggered`); // Debug log
             menuBtn.classList.toggle('active');
             mobileMenu.classList.toggle('active');
         });
