@@ -169,3 +169,31 @@ html {
     z-index: 10000;
   }
 }
+#mobileMenu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#mobileMenu.active {
+  max-height: 500px; /* Ensure this is enough to show the menu */
+  opacity: 1;
+}
+
+#menuBtn span {
+  transition: all 0.3s ease;
+}
+
+#menuBtn.active span:first-child {
+  transform: translateY(11.4px) rotate(45deg);
+}
+
+#menuBtn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+#menuBtn.active span:last-child {
+  transform: translateY(-11.5px) rotate(-45deg);
+}
