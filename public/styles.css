@@ -41,7 +41,7 @@ html {
 }
 
 #MobileMenu {
-  display: none;
+  display: absolute;
   right: 10px;
   top: 60px;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity, 1));
