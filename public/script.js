@@ -1,26 +1,34 @@
-// Get the menu button and mobile menu elements
+// Get the menu button, label, and mobile menu elements
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('MobileMenu');
+const labelMenuBtn = document.getElementById('label-menuBtn');
 
 // Initially hide the mobile menu
 mobileMenu.style.display = 'none';
 
-// Add click event listener to menu button
-menuBtn.addEventListener('change', function() {
+// Checkbox change event
+menuBtn.addEventListener('change', function () {
   if (this.checked) {
-    // Show mobile menu when checkbox is checked
     mobileMenu.style.display = 'flex';
     mobileMenu.style.flexDirection = 'column';
   } else {
-    // Hide mobile menu when checkbox is unchecked  
     mobileMenu.style.display = 'none';
   }
 });
 
+// Fallback click event for label on mobile
+labelMenuBtn.addEventListener('click', function (e) {
+  menuBtn.checked = !menuBtn.checked; // Toggle checkbox state
+  mobileMenu.style.display = menuBtn.checked ? 'flex' : 'none';
+  if (menuBtn.checked) {
+    mobileMenu.style.flexDirection = 'column';
+  }
+});
+
 // Close mobile menu when clicking outside
-document.addEventListener('click', function(event) {
-  const isClickInside = mobileMenu.contains(event.target) || menuBtn.contains(event.target);
-  
+document.addEventListener('click', function (event) {
+  const isClickInside =
+    mobileMenu.contains(event.target) || labelMenuBtn.contains(event.target);
   if (!isClickInside && mobileMenu.style.display === 'flex') {
     mobileMenu.style.display = 'none';
     menuBtn.checked = false;

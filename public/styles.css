@@ -6,24 +6,24 @@
 html {
   scroll-behavior: smooth;
 }
+
 #navbar {
   padding: 2rem;
 }
-#menuBtn {
-  top: 14px;
-  right: 0;
-}
+
 #label-menuBtn {
   top: 14px;
   right: 0;
+  width: 40px; /* Ensure clickable area is large enough */
+  height: 40px;
+  cursor: pointer; /* Visual feedback */
+  z-index: 30; /* Ensure the label is clickable */
 }
-@media screen and (min-width: 768px) {
-  s #menuBtn {
-    display: none;
-  }
-  #img-menuBtn {
-    display: none;
-  }
+
+#img-menuBtn {
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Let the label handle clicks */
 }
 
 #logo {
@@ -32,6 +32,7 @@ html {
     left: 8rem;
   }
 }
+
 #DesktopMenu {
   @media screen and (max-width: 768px) {
     display: none;
@@ -40,10 +41,12 @@ html {
     margin-left: auto;
   }
 }
+
 #DesktopMenuBtn {
   padding: 0.5rem 1rem;
   border-radius: 40px;
 }
+
 #DesktopMenuBtn:hover {
   padding: 0.5rem 1rem;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
@@ -52,12 +55,21 @@ html {
 #MobileMenu {
   gap: 10px;
   display: none;
+  position: absolute;
   right: 10px;
   top: 60px;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity, 1));
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+  z-index: 20; /* Ensure it’s above other elements */
 }
 
-/* Home */
+@media screen and (min-width: 768px) {
+  #label-menuBtn {
+    display: none; /* Hide the burger menu on desktop */
+  }
+  #MobileMenu {
+    display: none; /* Ensure mobile menu stays hidden on desktop */
+  }
+}
