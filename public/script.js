@@ -1,58 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
     const navLinks = document.querySelectorAll('#mobileMenu a');
 
-    // Toggle menu function
+    let isMenuOpen = false;
+
     function toggleMenu() {
-        menuBtn.classList.toggle('active');
-      
-        mobileMenu.classList.toggle('active');
+        isMenuOpen = !isMenuOpen;
+        mobileMenu.classList.toggle('hidden');
+        
+        // Update the icon
+        if (isMenuOpen) {
+            menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
+        } else {
+            menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M3 6h18M3 18h18"/>';
+        }
     }
- 
-    // Close menu when clicking a link
+
+    // Handle button clicks
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    // Handle mobile link clicks
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             toggleMenu();
         });
     });
-    menuBtn.addEventListener('click', () => {
-        if (menuBtn.classList.contains('active')) {
-            menuBtn.classList.remove('active');
-        } else {
-            menuBtn.classList.add('active');
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (isMenuOpen && !menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+            toggleMenu();
         }
     });
-    menuBtn.addEventListener('touchstart', () => {
-        menuBtn.classList.toggle('active');
-    });
-    menuBtn.addEventListener('touchstart', () => {
-        menuBtn.classList.toggle('active');
-    });
-    menuBtn.addEventListener('touchstart', () => {
-        menuBtn.classList.toggle('active');
-    });
-    
-
-    // Fallback for touch devices   
-    menuBtn.addEventListener('touchstart', (e) => {
-        e.preventDefault(); // Prevent default touch behavior
-        console.log('Touchstart event triggered', { event: e.type });
-        menuBtn.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-    }, { passive: false });
-
-    menuBtn.addEventListener('click', (e) => {
-        console.log('Click event triggered', { event: e.type });
-        menuBtn.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-    });
-
-    // Fallback for touch devices
-    menuBtn.addEventListener('touchstart', (e) => {
-        e.preventDefault(); // Prevent default touch behavior
-        console.log('Touchstart event triggered', { event: e.type });
-        menuBtn.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-    }, { passive: false });
 });

@@ -57,63 +57,29 @@ html {
   right: 10px;
   position: absolute;
   padding: 10px; /* Increase touch target size */
-  z-index: 1000; /* Ensure it’s above other elements */
+  z-index: 1000; /* Ensure it's above other elements */
 }
 
-/* Hamburger menu animation */
-#menuBtn.active span:first-child {
-  transform: translateY(11.4px) rotate(45deg);
-  transition: transform 0.3s ease;
-}
-
-#menuBtn.active span:nth-child(2) {
-  opacity: 0;
-}
-
-#menuBtn.active span:last-child {
-  transform: translateY(-11.5px) rotate(-45deg);
-  transition: transform 0.3s ease;
-}
-
-/* Mobile menu animation */
+/* Add these to your existing styles */
 #mobileMenu {
-  opacity: 0;
-  transform: translateY(-11px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
-#mobileMenu.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* Replace existing hamburger and mobile menu CSS with: */
-
-/* Hamburger bars base state */
-#menuBtn span {
-  transition: all 0.3s ease;
-  transform-origin: center;
+#mobileMenu.hidden {
+  display: none;
 }
 
-/* Hamburger active state */
-#menuBtn.active span:first-child {
-  transform: translateY(11.6px) rotate(45deg);
+/* Ensure menu is above other content */
+#mobileMenu:not(.hidden) {
+  display: block;
+  z-index: 999;
 }
 
-#menuBtn.active span:nth-child(2) {
-  opacity: 0;
+/* Animation for menu icon */
+#menuIcon {
+  transition: transform 0.3s ease;
 }
 
-#menuBtn.active span:last-child {
-  transform: translateY(-11.6px) rotate(-45deg);
-}
-
-/* Mobile menu transitions */
-
-#mobileMenu.active {
-  max-height: 500px;
-  opacity: 1;
+#menuBtn:active #menuIcon {
+  transform: scale(0.9);
 }

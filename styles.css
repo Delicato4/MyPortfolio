@@ -38,12 +38,19 @@ html {
 
 /* Mobile menu animation */
 #mobileMenu {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none;
 }
 
-#mobileMenu.active {
-  opacity: 1;
-  transform: translateY(0);
+#mobileMenu.hidden {
+  display: none;
+}
+
+#mobileMenu:not(.hidden) {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  #mobileMenu {
+    display: none !important;
+  }
 }
