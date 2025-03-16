@@ -12,7 +12,16 @@ html {
 #menuBtn {
   top: 14px;
   right: 0;
-  @media screen and (min-width: 768px) {
+}
+#label-menuBtn {
+  top: 14px;
+  right: 0;
+}
+@media screen and (min-width: 768px) {
+  #menuBtn {
+    display: none;
+  }
+  #img-menuBtn {
     display: none;
   }
 }
@@ -41,6 +50,7 @@ html {
 }
 
 #MobileMenu {
+  gap: 10px;
   display: absolute;
   right: 10px;
   top: 60px;
