@@ -6,38 +6,47 @@
 html {
   scroll-behavior: smooth;
 }
-
-#mobileMenu {
-  transition: all 0.3s ease-in-out;
-  @apply lg:flex flex-col lg:flex-row fixed lg:static top-16 right-0 bg-slate-400 lg:bg-transparent w-48 p-4 lg:p-0 space-y-2 lg:space-y-0 lg:space-x-6;
+#navbar {
+  padding: 2rem;
 }
-
-#menuIcon {
-  transition: transform 0.3s ease;
-}
-
-@media (min-width: 1024px) {
-  #mobileMenu {
-    display: flex !important;
+#menuBtn {
+  top: 14px;
+  right: 0;
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 }
 
-#menuBtn {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
+#logo {
+  @media screen and (min-width: 768px) {
+    margin-right: auto;
+    left: 8rem;
+  }
+}
+#DesktopMenu {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    margin-left: auto;
+  }
+}
+#DesktopMenuBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+}
+#DesktopMenuBtn:hover {
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
 }
 
-nav {
-  transition: all 0.3s ease;
-}
-
-nav.scrolled {
-  background-color: rgba(
-    148,
-    163,
-    184,
-    0.9
-  ); /* Slightly transparent on scroll */
-  backdrop-filter: blur(5px);
+#MobileMenu {
+  display: none;
+  right: 10px;
+  top: 60px;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity, 1));
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+  z-index: 100;
 }

@@ -15,69 +15,80 @@
   </head>
   <body class="bg-slate-200">
     <!-- Navbar -->
-    <nav class="bg-slate-400 p-4 shadow-lg fixed w-full z-10">
-      <div class="container mx-auto flex items-center justify-between">
-        <!-- Logo/Name (Left on large screens, Center on mobile) -->
-        <div class="text-xl font-bold text-cyan-800 lg:ml-4 hidden lg:block">
-          Amin
-        </div>
-        <!-- Mobile Menu Button -->
-        <button
-          id="menuBtn"
-          class="lg:hidden text-slate-800 focus:outline-none"
-        >
-          <svg
-            id="menuIcon"
-            class="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
-        </button>
-        <!-- Navigation Links -->
+
+    <nav id="navbar" class="fixed w-full z-10 justify-center items-center">
+      <button
+        id="menuBtn"
+        class="absolute right-1 text-slate-800 focus:outline-none w-10 h-10"
+      >
+        <img class="" src="images/burger-menu-svgrepo-com.svg" alt="" />
+      </button>
+      <div class="mx-auto flex items-center justify-center">
         <div
-          id="mobileMenu"
-          class="hidden lg:flex lg:items-center lg:space-x-6"
+          id="logo"
+          class="text-xl font-bold text-slate-800 absolute left-1/2 transform -translate-x-1/2 lg:static lg:transform-none"
         >
+          AMIN SAHRAEI
+        </div>
+        <div id="DesktopMenu" class="flex items-center gap-10">
           <a
+            id="DesktopMenuBtn"
             href="#home"
-            class="text-slate-800 hover:text-cyan-800 font-semibold transition duration-300"
+            class="block text-slate-800 hover:text-cyan-800 font-semibold transition duration-300 py-2"
             >ABOUT</a
           >
           <a
+            id="DesktopMenuBtn"
             href="#skills"
-            class="text-slate-800 hover:text-cyan-800 font-semibold transition duration-300"
+            class="block text-slate-800 hover:text-cyan-800 font-semibold transition duration-300 py-2"
             >SKILLS</a
           >
           <a
+            id="DesktopMenuBtn"
             href="#projects"
-            class="text-slate-800 hover:text-cyan-800 font-semibold transition duration-300"
+            class="block text-slate-800 hover:text-cyan-800 font-semibold transition duration-300 py-2"
             >PROJECTS</a
           >
           <a
+            id="DesktopMenuBtn"
             href="#contact"
-            class="text-slate-800 hover:text-cyan-800 font-semibold transition duration-300"
+            class="block text-slate-800 hover:text-cyan-800 font-semibold transition duration-300 py-2"
+            >CONTACT</a
+          >
+        </div>
+        <div id="MobileMenu" class="absolute items-center gap-10">
+          <a
+            id="MobileMenuBtn"
+            href="#home"
+            class="block text-slate-800 hover:text-cyan-800 font-semibold transition duration-300 py-2"
+            >ABOUT</a
+          >
+          <a
+            id="MobileMenuBtn"
+            href="#skills"
+            class="block text-slate-800 hover:text-cyan-800 font-semibold transition duration-300 py-2"
+            >SKILLS</a
+          >
+          <a
+            id="MobileMenuBtn"
+            href="#projects"
+            class="block text-slate-800 hover:text-cyan-800 font-semibold transition duration-300 py-2"
+            >PROJECTS</a
+          >
+          <a
+            id="MobileMenuBtn"
+            href="#contact"
+            class="block text-slate-800 hover:text-cyan-800 font-semibold transition duration-300 py-2"
             >CONTACT</a
           >
         </div>
       </div>
     </nav>
 
-    <!-- Add spacing below navbar to avoid content overlap -->
-    <div class="h-16"></div>
-
     <!-- Header -->
     <header
       id="home"
-      class="rounded-bl-3xl rounded-br-3xl flex justify-center items-center gap-5 bg-slate-400 p-5 sm:flex-row flex-col lg:gap-14 lg:rounded-l-full lg:rounded-r-full"
+      class="mt-5 rounded-bl-3xl rounded-br-3xl flex justify-center items-center gap-5 bg-slate-400 p-5 sm:flex-row flex-col lg:gap-14 lg:rounded-l-full lg:rounded-r-full"
     >
       <img
         class="rounded-full shadow-lg shadow-slate-800 w-36 h-36 sm:w-48 sm:h-48 md:w-60 md:h-60 lg:w-72 lg:h-72"
@@ -276,7 +287,7 @@
             ><span
               class="__cf_email__"
               data-cfemail="a8c9c5c1c6dbc9c0dac9cd9ec8cfc5c9c18ec3cfcd"
-              >[email&#160;protected]</span
+              >[email protected]</span
             ></a
           >
         </p>
