@@ -4,36 +4,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuIcon = document.getElementById('menuIcon');
     const navLinks = document.querySelectorAll('#mobileMenu a');
 
-    let isMenuOpen = false;
-
+    // Simple toggle function
     function toggleMenu() {
-        isMenuOpen = !isMenuOpen;
-        mobileMenu.classList.toggle('hidden');
-        
-        // Update the icon
-        if (isMenuOpen) {
-            menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
+        if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+            menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>'; // X icon
         } else {
-            menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M3 6h18M3 18h18"/>';
+            mobileMenu.classList.add('hidden');
+            menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>'; // Hamburger icon
         }
     }
 
-    // Handle button clicks
+    // Single click event listener for menu button
     menuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
         toggleMenu();
     });
 
-    // Handle mobile link clicks
+    // Handle link clicks
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            toggleMenu();
+            toggleMenu(); // Close menu on link click
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (isMenuOpen && !menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        if (!mobileMenu.classList.contains('hidden') && 
+            !menuBtn.contains(e.target) && 
+            !mobileMenu.contains(e.target)) {
             toggleMenu();
         }
     });

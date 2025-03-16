@@ -1,85 +1,43 @@
+/* Ensure Tailwind directives are included if using Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-#menuBtn {
-  right: 10px;
-  position: absolute;
-}
-@media (min-width: 768px) {
-  #menuBtn {
-    display: none;
-  }
-}
-#navbar-container {
-  @media (min-width: 768px) {
-    display: flex;
-  }
-}
-#logo {
-  @media (min-width: 768px) {
-    margin-right: auto;
-    margin-left: 20px;
-  }
-}
-#menuIcon {
-  @media (min-width: 768px) {
-    display: none;
-  }
-}
-#menuIcon {
-  scale: 1.4;
-}
-#menuIcon:active {
-  scale: 1.2;
-}
-
-#navbar-container {
-  padding: 1rem;
-}
-#desktop-menu {
-  @media (min-width: 768px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    font-size: 1.2rem;
-    margin-right: 40px;
-  }
-}
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
-#menuBtn {
-  padding: 1rem;
-  right: 10px;
-  position: absolute;
-  padding: 10px; /* Increase touch target size */
-  z-index: 1000; /* Ensure it's above other elements */
-}
 
-/* Add these to your existing styles */
 #mobileMenu {
   transition: all 0.3s ease-in-out;
+  @apply lg:flex flex-col lg:flex-row fixed lg:static top-16 right-0 bg-slate-400 lg:bg-transparent w-48 p-4 lg:p-0 space-y-2 lg:space-y-0 lg:space-x-6;
 }
 
-#mobileMenu.hidden {
-  display: none;
-}
-
-/* Ensure menu is above other content */
-#mobileMenu:not(.hidden) {
-  display: block;
-  z-index: 999;
-}
-
-/* Animation for menu icon */
 #menuIcon {
   transition: transform 0.3s ease;
 }
 
-#menuBtn:active #menuIcon {
-  transform: scale(0.9);
+@media (min-width: 1024px) {
+  #mobileMenu {
+    display: flex !important;
+  }
+}
+
+#menuBtn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+nav {
+  transition: all 0.3s ease;
+}
+
+nav.scrolled {
+  background-color: rgba(
+    148,
+    163,
+    184,
+    0.9
+  ); /* Slightly transparent on scroll */
+  backdrop-filter: blur(5px);
 }

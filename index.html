@@ -10,49 +10,73 @@
       rel="stylesheet"
     />
     <title>Amin</title>
-    <link href="public/output.css" rel="stylesheet">
-    <link rel="stylesheet" href="public/styles.css">
+    <link href="public/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="public/styles.css" />
   </head>
   <body class="bg-slate-200">
-
     <!-- Navbar -->
-    <nav class="fixed top-0 w-full bg-slate-800 p-2 z-50">
-      <div id="navbar-container" class="container  mx-auto flex items-center justify-center gap-5">
-        <!-- Logo -->
-        <a href="#" id="logo" class="text-white text-xl font-bold ">Amin Sahrae</a>
-    
-        <!-- Desktop Menu -->
-        <div id="desktop-menu" class="hidden md:flex space-x-8 ">
-          <a href="#home" class="text-white hover:text-cyan-400 transition">Home</a>
-          <a href="#projects" class="text-white hover:text-cyan-400 transition">Projects</a>
-          <a href="#contact" class="text-white hover:text-cyan-400 transition">Contact</a>
+    <nav class="bg-slate-400 p-4 shadow-lg fixed w-full z-10">
+      <div class="container mx-auto flex items-center justify-between">
+        <!-- Logo/Name (Left on large screens, Center on mobile) -->
+        <div class="text-xl font-bold text-cyan-800 lg:ml-4 hidden lg:block">
+          Amin
         </div>
-    
-        <!-- Hamburger Button (right-aligned on mobile) -->
-        <button id="menuBtn" class=" text-white  focus:outline-none z-50  ">
-          <div class="flex flex-col gap-2 ">
-            <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-          </div>
+        <!-- Mobile Menu Button -->
+        <button
+          id="menuBtn"
+          class="lg:hidden text-slate-800 focus:outline-none"
+        >
+          <svg
+            id="menuIcon"
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
         </button>
-      </div>
-    
-      <!-- Mobile Menu -->
-      <div id="mobileMenu" class=" bg-slate-800  transition-all z-[999]">
-        <div class="flex flex-col items-center space-y-2 p-4 gap-2 z-50">
-          <a href="#home" class="text-white hover:text-cyan-400 transition">Home</a>
-          <a href="#projects" class="text-white hover:text-cyan-400 transition">Projects</a>
-          <a href="#contact" class="text-white hover:text-cyan-400 transition">Contact</a>
+        <!-- Navigation Links -->
+        <div
+          id="mobileMenu"
+          class="hidden lg:flex lg:items-center lg:space-x-6"
+        >
+          <a
+            href="#home"
+            class="text-slate-800 hover:text-cyan-800 font-semibold transition duration-300"
+            >ABOUT</a
+          >
+          <a
+            href="#skills"
+            class="text-slate-800 hover:text-cyan-800 font-semibold transition duration-300"
+            >SKILLS</a
+          >
+          <a
+            href="#projects"
+            class="text-slate-800 hover:text-cyan-800 font-semibold transition duration-300"
+            >PROJECTS</a
+          >
+          <a
+            href="#contact"
+            class="text-slate-800 hover:text-cyan-800 font-semibold transition duration-300"
+            >CONTACT</a
+          >
         </div>
       </div>
     </nav>
-    
-    
 
-    <!-- Spacer for fixed navbar -->
-    
+    <!-- Add spacing below navbar to avoid content overlap -->
+    <div class="h-16"></div>
 
     <!-- Header -->
-    <header id="home"
+    <header
+      id="home"
       class="rounded-bl-3xl rounded-br-3xl flex justify-center items-center gap-5 bg-slate-400 p-5 sm:flex-row flex-col lg:gap-14 lg:rounded-l-full lg:rounded-r-full"
     >
       <img
@@ -60,110 +84,218 @@
         src="images/Amin.jpg"
         alt=""
       />
-      
-      <div class="flex items-start justify-center md:w-1/2 lg:w-1/2 lg:text-lg ">
-        
-          <span class="text-slate-800 shadow-lg shadow-slate-800 bg-slate-200 p-2 rounded-2xl lg:rounded-r-full  "
-            ><h1 class="text-xl rounded-3xl text-cyan-800 font-bold p-1">
-              Hi,Im AMIN
-            </h1>
-            Motivated Front-End Developer Intern with hands-on experience in building responsive web applications using HTML, CSS, JavaScript, and React. Adept at translating UI/UX designs into functional code while ensuring accessibility and performance. Passionate about learning new technologies and collaborating with teams to create seamless user experiences. Seeking opportunities to expand technical skills and contribute to innovative projects.</span
-          >
-        </div>
+
+      <div class="flex items-start justify-center md:w-1/2 lg:w-1/2 lg:text-lg">
+        <span
+          class="text-slate-800 shadow-lg shadow-slate-800 bg-slate-200 p-2 rounded-2xl lg:rounded-r-full"
+        >
+          <h1 class="text-xl rounded-3xl text-cyan-800 font-bold p-1">
+            Hi,Im AMIN
+          </h1>
+          Motivated Front-End Developer Intern with hands-on experience in
+          building responsive web applications using HTML, CSS, JavaScript, and
+          React. Adept at translating UI/UX designs into functional code while
+          ensuring accessibility and performance. Passionate about learning new
+          technologies and collaborating with teams to create seamless user
+          experiences. Seeking opportunities to expand technical skills and
+          contribute to innovative projects.
+        </span>
       </div>
-      
     </header>
 
-    <div class=" hidden lg:flex md:flex items-center justify-center mt-10   ">
-      <button class="  text-center items-center justify-center bg-slate-400 text-slate-600 shadow-lg shadow-slate-800 p-2 rounded-2xl text-2xl font-bold   hover:bg-slate-600 hover:text-slate-200 hover:scale-105 transition-all duration-300">Hire Me Now</button>
+    <div class="hidden lg:flex md:flex items-center justify-center mt-10">
+      <button
+        class="text-center items-center justify-center bg-slate-400 text-slate-600 shadow-lg shadow-slate-800 p-2 rounded-2xl text-2xl font-bold hover:bg-slate-600 hover:text-slate-200 hover:scale-105 transition-all duration-300"
+      >
+        Hire Me Now
+      </button>
     </div>
 
-    <!-- skills -->
-
-    <div class="flex flex-col items-center justify-center mt-10 bg-slate-800 p-5 rounded-2xl">
+    <!-- Skills -->
+    <div
+      id="skills"
+      class="flex flex-col items-center justify-center mt-10 bg-slate-800 p-5 rounded-2xl"
+    >
       <div class="flex items-center justify-center p-5">
-        <h1 class="text-2xl font-bold text-white ">My Skills</h1>
+        <h1 class="text-2xl font-bold text-white">My Skills</h1>
+      </div>
+      <div
+        class="grid grid-cols-2 md:grid-cols-3 md:gap-8 lg:grid-cols-6 items-center justify-center gap-5"
+      >
+        <div
+          class="text-center shadow-slate-600 bg-orange-800 shadow-lg w-32 text-white p-4 rounded-2xl"
+        >
+          HTML
         </div>
-      <div class="grid grid-cols-2  md:grid-cols-3 md:gap-8 lg:grid-cols-6 items-center justify-center gap-5">
-        <div class="text-center shadow-slate-600 bg-orange-800 shadow-lg w-32 text-white p-4 rounded-2xl ">HTML</div>
-        <div class="text-center shadow-slate-600 bg-blue-500 shadow-lg w-32 text-white p-4 rounded-2xl ">CSS</div>
-        <div class="text-center shadow-slate-600 bg-yellow-600 shadow-lg w-32 text-white p-4 rounded-2xl ">JavaScript</div>
-        <div class="text-center shadow-slate-600 bg-blue-800 shadow-lg w-32 text-white p-4 rounded-2xl ">React</div>
-        <div class="text-center shadow-slate-600 bg-green-600 shadow-lg w-32 text-white p-4 rounded-2xl ">Node.js</div>
-        <div class="text-center shadow-slate-600 bg-slate-600 shadow-lg w-32 text-white p-4 rounded-2xl ">Tailwind</div>
+        <div
+          class="text-center shadow-slate-600 bg-blue-500 shadow-lg w-32 text-white p-4 rounded-2xl"
+        >
+          CSS
+        </div>
+        <div
+          class="text-center shadow-slate-600 bg-yellow-600 shadow-lg w-32 text-white p-4 rounded-2xl"
+        >
+          JavaScript
+        </div>
+        <div
+          class="text-center shadow-slate-600 bg-blue-800 shadow-lg w-32 text-white p-4 rounded-2xl"
+        >
+          React
+        </div>
+        <div
+          class="text-center shadow-slate-600 bg-green-600 shadow-lg w-32 text-white p-4 rounded-2xl"
+        >
+          Node.js
+        </div>
+        <div
+          class="text-center shadow-slate-600 bg-slate-600 shadow-lg w-32 text-white p-4 rounded-2xl"
+        >
+          Tailwind
+        </div>
       </div>
       <div class="flex items-center justify-center mt-5 p-5">
-        <h1 class="text-2xl font-bold text-white ">languages</h1>
+        <h1 class="text-2xl font-bold text-white">languages</h1>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-2 md:gap-8 lg:flex items-center justify-center gap-5">
-        <div class="text-center bg-slate-300 shadow-lg shadow-slate-600 w-32 text-black font-semibold p-4 rounded-2xl ">Farsi</div>
-        <div class="text-center bg-slate-300 shadow-lg shadow-slate-600 w-32 text-black font-semibold p-4 rounded-2xl ">English</div>
-        <div class="text-center bg-slate-300 shadow-lg shadow-slate-600 w-32 text-black font-semibold p-4 rounded-2xl ">French</div>
-        <div class="text-center bg-slate-300 shadow-lg shadow-slate-600 w-32 text-black font-semibold p-4 rounded-2xl ">Deutsch</div>
-      
-     
-        </div>  
+      <div
+        class="grid grid-cols-2 md:grid-cols-2 md:gap-8 lg:flex items-center justify-center gap-5"
+      >
+        <div
+          class="text-center bg-slate-300 shadow-lg shadow-slate-600 w-32 text-black font-semibold p-4 rounded-2xl"
+        >
+          Farsi
+        </div>
+        <div
+          class="text-center bg-slate-300 shadow-lg shadow-slate-600 w-32 text-black font-semibold p-4 rounded-2xl"
+        >
+          English
+        </div>
+        <div
+          class="text-center bg-slate-300 shadow-lg shadow-slate-600 w-32 text-black font-semibold p-4 rounded-2xl"
+        >
+          French
+        </div>
+        <div
+          class="text-center bg-slate-300 shadow-lg shadow-slate-600 w-32 text-black font-semibold p-4 rounded-2xl"
+        >
+          Deutsch
+        </div>
+      </div>
     </div>
-    <div id="projects" class="flex flex-col items-center justify-center mt-10 p-5 ">
-      <h1 class="text-2xl font-bold text-slate-800 pb-8 ">My Projects</h1>
-      <div class="flex flex-col items-center justify-center gap-5 lg:flex-row xl:flex-row 2xl:flex-row md:flex-row sm:flex-col">
-      
-        <!-- First Project -->
+
+    <!-- Projects -->
+    <div
+      id="projects"
+      class="flex flex-col items-center justify-center mt-10 p-5"
+    >
+      <h1 class="text-2xl font-bold text-slate-800 pb-8">My Projects</h1>
+      <div
+        class="flex flex-col items-center justify-center gap-5 lg:flex-row xl:flex-row 2xl:flex-row md:flex-row sm:flex-col"
+      >
         <div class="relative group">
-          <h5 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-slate-700 p-2 rounded-lg text-slate-300 font-semibold text-center transition-opacity duration-300 group-hover:opacity-0">
+          <h5
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-slate-700 p-2 rounded-lg text-slate-300 font-semibold text-center transition-opacity duration-300 group-hover:opacity-0"
+          >
             Hover To watch
           </h5>
           <a href="https://delicato4.github.io/Delicato4.gitgub.io/">
-            <img src="images/Delicato.png" alt="" 
-                 class="blur-sm group-hover:blur-none transition-all duration-300 w-full h-full rounded-full max-w-96 max-h-96"/>
+            <img
+              src="images/Delicato.png"
+              alt=""
+              class="blur-sm group-hover:blur-none transition-all duration-300 w-full h-full rounded-full max-w-96 max-h-96"
+            />
           </a>
         </div>
-
-        <!-- Second Project -->
         <div class="relative group">
-          <h5 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-slate-700 p-2 rounded-lg text-slate-300 font-semibold text-center transition-opacity duration-300  group-hover:opacity-0">
+          <h5
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-slate-700 p-2 rounded-lg text-slate-300 font-semibold text-center transition-opacity duration-300 group-hover:opacity-0"
+          >
             Hover To watch
           </h5>
           <a href="https://delicato4.github.io/store-webapp1/">
-            <img src="images/store webapp.png" alt="" 
-                 class="blur-sm group-hover:blur-none transition-all duration-300 w-full h-full rounded-full max-w-96 max-h-96"/>
+            <img
+              src="images/store webapp.png"
+              alt=""
+              class="blur-sm group-hover:blur-none transition-all duration-300 w-full h-full rounded-full max-w-96 max-h-96"
+            />
           </a>
         </div>
         <div class="relative group">
-          <h5 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-slate-700 p-2 rounded-lg text-slate-300 font-semibold text-center transition-opacity  duration-300 group-hover:opacity-0">
+          <h5
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-slate-700 p-2 rounded-lg text-slate-300 font-semibold text-center transition-opacity duration-300 group-hover:opacity-0"
+          >
             Hover To watch
           </h5>
           <a href="https://delicato4.github.io/Barista-Portfolio/">
-            <img src="images/barista portfolio.png" alt="" 
-                 class="blur-sm group-hover:blur-none transition-all duration-300 w-full h-full rounded-full max-w-96 max-h-96"/>
+            <img
+              src="images/barista portfolio.png"
+              alt=""
+              class="blur-sm group-hover:blur-none transition-all duration-300 w-full h-full rounded-full max-w-96 max-h-96"
+            />
           </a>
         </div>
       </div>
-    </div> 
+    </div>
 
     <!-- Footer -->
-    <footer id="contact" class="flex flex-col lg:flex-row md:flex-row sm:flex-col mt-10 pt-5 items-center justify-center p-5 bg-slate-400 gap-10">
-      <div class="flex flex-col items-center justify-center gap-5 ">
+    <footer
+      id="contact"
+      class="flex flex-col lg:flex-row md:flex-row sm:flex-col mt-10 pt-5 items-center justify-center p-5 bg-slate-400 gap-10"
+    >
+      <div class="flex flex-col items-center justify-center gap-5">
         <h1 class="text-2xl font-bold text-slate-800">Follow Me</h1>
-          <div class="flex items-center justify-center gap-2">
+        <div class="flex items-center justify-center gap-2">
           <a href="https://github.com/Delicato4">
-            <img src="images/github-brands.svg" alt="" class="w-10 h-10 rounded-full hover:scale-105 transition-all duration-300"/>
+            <img
+              src="images/github-brands.svg"
+              alt=""
+              class="w-10 h-10 rounded-full hover:scale-105 transition-all duration-300"
+            />
           </a>
           <a href="https://www.instagram.com/amin._sahrai/">
-            <img src="images/instagram-brands-solid.svg" alt="" class="w-10 h-10 rounded-full hover:scale-105 transition-all duration-300"/>
+            <img
+              src="images/instagram-brands-solid.svg"
+              alt=""
+              class="w-10 h-10 rounded-full hover:scale-105 transition-all duration-300"
+            />
           </a>
           <a href="https://www.linkedin.com/in/delicato4/">
-            <img src="images/linkedin-brands.svg" alt="" class="w-10 h-10 rounded-full hover:scale-105 transition-all duration-300"/>
+            <img
+              src="images/linkedin-brands.svg"
+              alt=""
+              class="w-10 h-10 rounded-full hover:scale-105 transition-all duration-300"
+            />
           </a>
         </div>
       </div>
-      <div class="flex flex-col  items-center justify-center gap-5">
+      <div class="flex flex-col items-center justify-center gap-5">
         <h1 class="text-2xl font-bold text-slate-800">Contact Me</h1>
-        <p class="text-slate-800 text-center">Email: <a href="mailto:amin.kazemi.k@gmail.com">aminsahrae4@gmail.com</a></p>
-        <p class="text-slate-800">Phone: <a href="tel:+989123456789">+989116992576</a></p>
-        <p class="text-slate-800">Address: <a href="https://www.google.com/maps/place/Tehran,+Tehran+Province,+Iran/@35.6892,51.389,12z/data=!3m1!4b1!4m6!3m5!1s0x3f8e0043647a2701:0x678a76742478e880!8m2!3d35.6892!4d51.389!16zL20vMDZ1Z20?hl=en">guilan, Iran</a></p>
+        <p class="text-slate-800 text-center">
+          Email:
+          <a
+            href="/cdn-cgi/l/email-protection#92f3fffbfcbcf9f3e7f2fafcbcf9d2f5fff3fbfebcf1fdff"
+            ><span
+              class="__cf_email__"
+              data-cfemail="a8c9c5c1c6dbc9c0dac9cd9ec8cfc5c9c18ec3cfcd"
+              >[email&#160;protected]</span
+            ></a
+          >
+        </p>
+        <p class="text-slate-800">
+          Phone: <a href="tel:+989123456789">+989116992576</a>
+        </p>
+        <p class="text-slate-800">
+          Address:
+          <a
+            href="https://www.google.com/maps/place/Tehran,+Tehran+Province,+Iran/@35.6892,51.389,12z/data=!3m1!4b1!4m6!3m5!1s0x3f8e0043647a2701:0x678a76742478e880!8m2!3d35.6892!4d51.389!16zL20vMDZ1Z20?hl=en"
+            >guilan, Iran</a
+          >
+        </p>
       </div>
     </footer>
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
     <script src="/public/script.js"></script>
   </body>
 </html>
